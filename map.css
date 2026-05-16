@@ -16,6 +16,41 @@ body {
   border-radius: 8px; /* Optional: rounded corners */
 }
 
+.page-header {
+  display: flex;
+  gap: 1em;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin-bottom: 1em;
+}
+
+.time-filter {
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 0.35rem;
+  min-width: 220px;
+  font-size: 0.95rem;
+}
+
+.time-filter input[type="range"] {
+  width: 100%;
+}
+
+.time-filter time,
+.time-filter em {
+  display: block;
+}
+
+.time-filter time {
+  font-weight: 700;
+}
+
+.time-filter em {
+  color: #666;
+  font-style: italic;
+}
+
 #map svg {
   position: absolute;
   z-index: 1;
@@ -29,4 +64,34 @@ body {
   fill: steelblue;
   stroke: white;
   pointer-events: auto;
+  --color-departures: steelblue;
+  --color-arrivals: darkorange;
+  --color: color-mix(
+    in oklch,
+    var(--color-departures) calc(100% * var(--departure-ratio)),
+    var(--color-arrivals)
+  );
+  fill: var(--color);
 }
+
+.legend {
+  display: flex;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-top: 1em;
+}
+
+.legend > div {
+  flex: 1;
+  padding: 10px 16px;
+  text-align: center;
+  color: #fff;
+}
+
+.legend > div:first-child  { background: darkorange; text-align: left; }
+.legend > div:nth-child(2) { background: #d46fa0; }
+.legend > div:last-child   { background: steelblue; text-align: right; }

@@ -15,11 +15,25 @@
     <script src="map.js" type="module"></script>
   </head>
   <body>
-    <h1>🚴🏼‍♀️ Bikewatching</h1>
-    <p>See where people ride their bikes in the Boston!</p>
+    <div class="title-group">
+      <h1>🚴🏼‍♀️ Bikewatching</h1>
+      <p>See where people ride their bikes in the Boston!</p>
+    </div>
+    <header class="page-header">
+      <label class="time-filter">
+        Filter by time:
+        <input id="time-slider" type="range" min="-1" max="1440" value="-1" />
+        <time id="selected-time">Any time</time>
+        <em>(any time)</em>
+      </label>
+    </header>
     <div id="map">
       <svg></svg>
     </div>
-    
+    <div class="legend">
+      <div style="--departure-ratio: 1">More departures</div>
+      <div style="--departure-ratio: 0.5">Balanced</div>
+      <div style="--departure-ratio: 0">More arrivals</div>
+    </div>
   </body>
 </html>
