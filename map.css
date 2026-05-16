@@ -92,6 +92,6 @@ body {
   color: #fff;
 }
 
-.legend > div:first-child  { background: darkorange; text-align: left; }
+.legend > div:first-child  { background: steelblue; text-align: left; }
 .legend > div:nth-child(2) { background: #d46fa0; }
-.legend > div:last-child   { background: steelblue; text-align: right; }
+.legend > div:last-child   { background: darkorange; text-align: right; }
